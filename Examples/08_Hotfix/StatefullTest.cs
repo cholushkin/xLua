@@ -38,7 +38,9 @@ namespace XLuaTest
             set;
         }
 
+#pragma warning disable CS0067
         public event System.Action<int, double> AEvent;
+#pragma warning restore CS0067
 
         public int this[string field]
         {
