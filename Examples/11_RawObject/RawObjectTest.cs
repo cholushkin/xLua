@@ -10,14 +10,21 @@ namespace XLuaTest
             Debug.Log("type:" + o.GetType() + ", value:" + o);
         }
 
+        public static void SayHi()
+        {
+            Debug.Log("hi");
+        }
+
         // Use this for initialization
         void Start()
         {
             LuaEnv luaenv = new LuaEnv();
-            //直接传1234到一个object参数，xLua将选择能保留最大精度的long来传递
+            // Directly pass 1234 to an object parameter, xLua will select the long that can retain the maximum precision to pass
             luaenv.DoString("CS.XLuaTest.RawObjectTest.PrintType(1234)");
-            //通过一个继承RawObject的类，能实现指明以一个int来传递
+            // Through a class that inherits RawObject, it can be specified to pass an int
             luaenv.DoString("CS.XLuaTest.RawObjectTest.PrintType(CS.XLua.Cast.Int32(1234))");
+
+            luaenv.DoString("CS.XLuaTest.RawObjectTest.SayHi()");
             luaenv.Dispose();
         }
 

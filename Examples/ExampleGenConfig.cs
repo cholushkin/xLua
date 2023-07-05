@@ -13,10 +13,10 @@ using XLua;
 //using System.Reflection;
 //using System.Linq;
 
-//配置的详细介绍请看Doc下《XLua的配置.doc》
+// For a detailed introduction to the configuration, please refer to "XLua Configuration.doc" under Doc
 public static class ExampleGenConfig
 {
-    //lua中要使用到C#库的配置，比如C#标准库，或者Unity API，第三方库等。
+    // lua中要使用到C#库的配置，比如C#标准库，或者Unity API，第三方库等。
     [LuaCallCSharp]
     public static List<Type> LuaCallCSharp = new List<Type>() {
                 typeof(System.Object),
@@ -33,8 +33,8 @@ public static class ExampleGenConfig
                 typeof(GameObject),
                 typeof(Component),
                 typeof(Behaviour),
-                typeof(Transform),
-                typeof(Resources),
+                //typeof(Transform),
+                //typeof(Resources),
                 typeof(TextAsset),
                 typeof(Keyframe),
                 typeof(AnimationCurve),
